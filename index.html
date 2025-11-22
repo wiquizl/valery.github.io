@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Анкета Валерии</title>
 
-    <!-- Подключение красивого шрифта -->
+    <!-- Подключение элегантного шрифта -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -17,6 +17,7 @@
             padding: 20px 40px;
             border-radius: 15px;
             color: #FDAD00;
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -35,13 +36,37 @@
             border-radius: 12px;
             margin-bottom: 25px;
         }
+        .social {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #FDAD00;
+        }
+        a {
+            color: #FDAD00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* подпись внизу */
+        .signature {
+            font-size: 12px;
+            opacity: 0.8;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body>
     <h1>Анкета Валерии</h1>
 
     <!-- Фото -->
-    <img src="IMAGE_URL_HERE" class="photo" alt="Фото Валерии">
+    <img src="https://raw.githubusercontent.com/wiquizl/valery.github.io/main/IMG_0993.PNG
+" class="photo" alt="Me">
 
     <p><span class="label">Имя:</span> Валерия</p>
     <p><span class="label">День рождения:</span> 24.11.2008</p>
@@ -51,5 +76,15 @@
     <p><span class="label">Не любит:</span> ложь и лицемерие, занудство, скучные разговоры, рано вставать, имбирь, клубы, рыбу, жару и людей, которые ноют вместо действий.</p>
 
     <p><span class="label">Характер:</span> честная, инициативная, уверенная, смелая, пунктуальная, отзывчивая, заботливая, решительная, искренняя, дипломатичная, дерзкая, саркастичная, эмоциональная, мечтательная.</p>
+
+    <div class="social">
+        <p><span class="label">Telegram:</span> <a href="https://t.me/valerij_aa" target="_blank">@valerij_aa</a></p>
+        <p><span class="label">Instagram:</span> <a href="https://instagram.com/_.valerij_aa" target="_blank">_.valerij_aa</a></p>
+    </div>
+
+    <div class="signature">
+        *Подарок от Аляски и Муручи Припиздуччи
+    </div>
+
 </body>
 </html>
