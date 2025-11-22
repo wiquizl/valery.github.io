@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-3">
+    <meta charset="UTF-8">
     <title>Анкета Валерии</title>
 
-    <!-- Подключение элегантного шрифта -->
+    <!-- Шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --accent: #FDAD00;
+            --maxw: 700px;
+            --pad: 20px 40px;
+            --radius: 15px;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
         body {
             font-family: 'Playfair Display', serif;
-            max-width: 700px;
-            margin: 40px auto;
-            line-height: 1.7;
-            background: #2f0410;
-            padding: 20px 40px;
-            border-radius: 15px;
-            color: #FDAD00;
-            position: relative;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #2f0410; /* запасной цвет */
         }
-       h1 {
-    text-align: center;
-    margin-bottom: 10px; /* было 30px */
-    font-weight: 600;
-    letter-spacing: 1px;
-}
+
+        /* Карточка с содержимым */
+        .card {
+            width: 100%;
+            max-width: var(--maxw);
+            background: rgba(0,0,0,0.35); /* полупрозрачный фон поверх картинки */
+            border-radius: var(--radius);
+            padding: var(--pad);
+            position: relative;
+            box-sizing: border-box;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+        }
+
+        /* фон страницы (картинка) */
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: url("https://raw.githubusercontent.com/wiquizl/valery.github.io/main/IMG_0995.JPG
+") center/cover no-repeat fixed;
+        }
+        /* дополнительный затемняющий слой, чтоб текст читался */
+        .page-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px; /* как просила */
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
         p {
             margin: 12px 0;
+            line-height: 1.6;
         }
         .label {
             font-weight: 600;
@@ -34,56 +76,60 @@
         .photo {
             width: 100%;
             border-radius: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
         .social {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #FDAD00;
+            margin-top: 22px;
+            padding-top: 12px;
+            border-top: 1px solid var(--accent);
         }
-        a {
-            color: #FDAD00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        /* подпись внизу */
         .signature {
             font-size: 12px;
-            opacity: 0.8;
+            opacity: 0.85;
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 12px;
+            right: 14px;
             font-style: italic;
         }
 
+        /* на узких экранах чуть сузим падинг */
+        @media (max-width: 420px) {
+            .card { padding: 16px; }
+            .signature { right: 10px; bottom: 8px; font-size: 11px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Анкета Валерии</h1>
 
-    <!-- Фото -->
-    <img src="https://raw.githubusercontent.com/wiquizl/valery.github.io/main/IMG_0994.PNG
-        " class="photo" alt="Me">
+    <!-- фон -->
+    <div class="page-bg" aria-hidden="true"></div>
 
-    <p><span class="label">Имя:</span> Валерия</p>
-    <p><span class="label">День рождения:</span> 24.11.2008</p>
+    <div class="card">
+        <h1>Анкета Валерии</h1>
 
-    <p><span class="label">Любит:</span> уютные фильмы, книги и новые миры, теннис, свою собаку, хоккей, кофе, цветы, Францию и музыку, которая совпадает с настроением.</p>
+        <!-- Если хочешь вставить отдельную картинку (внутри карточки) — раскомментируй и замени ссылку -->
+        <!-- <img src="https://raw.githubusercontent.com/wiquizl/valery.github.io/main/IMG_0994.PNG" class="photo" alt="Фото Валерии"> -->
 
-    <p><span class="label">Не любит:</span> ложь и лицемерие, занудство, скучные разговоры, рано вставать, имбирь, клубы, рыбу, жару и людей, которые ноют вместо действий.</p>
+        <p><span class="label">Имя:</span> Валерия</p>
+        <p><span class="label">День рождения:</span> 24.11.2008</p>
 
-    <p><span class="label">Характер:</span> честная, инициативная, уверенная, смелая, пунктуальная, отзывчивая, заботливая, решительная, искренняя, дипломатичная, дерзкая, саркастичная, эмоциональная, мечтательная.</p>
+        <p><span class="label">Любит:</span> уютные фильмы, книги и новые миры, теннис, свою собаку, хоккей, кофе, цветы, Францию и музыку, которая совпадает с настроением.</p>
 
-    <div class="social">
-        <p><span class="label">Telegram:</span> <a href="https://t.me/valerij_aa" target="_blank">@valerij_aa</a></p>
-        <p><span class="label">Instagram:</span> <a href="https://instagram.com/_.valerij_aa" target="_blank">_.valerij_aa</a></p>
-    </div>
+        <p><span class="label">Не любит:</span> ложь и лицемерие, занудство, скучные разговоры, рано вставать, имбирь, клубы, рыбу, жару и людей, которые ноют вместо действий.</p>
 
-    <div class="signature">
-        *Подарок от Аляски и Муручи Припиздуччи
+        <p><span class="label">Характер:</span> честная, инициативная, уверенная, смелая, пунктуальная, отзывчивая, заботливая, решительная, искренняя, дипломатичная, дерзкая, саркастичная, эмоциональная, мечтательная.</p>
+
+        <div class="social">
+            <p><span class="label">Telegram:</span> <a href="https://t.me/valerij_aa" target="_blank">@valerij_aa</a></p>
+            <p><span class="label">Instagram:</span> <a href="https://instagram.com/_.valerij_aa" target="_blank">_.valerij_aa</a></p>
+        </div>
+
+        <div class="signature">
+            *Подарок от Аляски и Муручи Припиздуччи
+        </div>
     </div>
 
 </body>
